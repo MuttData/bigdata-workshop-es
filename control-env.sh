@@ -2,7 +2,7 @@
 
 function stop {
   echo "Stopping and removing containers"
-  docker-compose --project-name wksp down
+  docker compose --project-name wksp down
 }
 
 function cleanup {
@@ -14,7 +14,7 @@ function cleanup {
 
 function start {
   echo "Starting up"
-  docker-compose --project-name wksp up -d
+  docker compose --project-name wksp up -d
 }
 
 function update {
@@ -22,7 +22,7 @@ function update {
   git pull --all
 
   echo "Updating docker images ..."
-  docker-compose --project-name wksp pull
+  docker compose --project-name wksp pull
 
   echo "You probably should restart"
 }
@@ -78,7 +78,7 @@ case $1 in
     ;;
 
   logs )
-  docker-compose --project-name wksp logs -f
+  docker compose --project-name wksp logs -f
     ;;
 
   token )
@@ -88,7 +88,7 @@ case $1 in
   superset-start )
   superset-start
     ;;
-  
+
   superset-stop )
   superset-stop
     ;;

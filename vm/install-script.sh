@@ -17,9 +17,9 @@ sudo apt-get install -y git \
   maven
 
 ## Scala
-# IMPORTANT: Make sure scala version is the same as Spark 
+# IMPORTANT: Make sure scala version is the same as Spark
 # have been compiled to. Run spark-shell
-# 
+#
 sudo apt-get -y remove --auto-remove scala-library scala
 sudo apt-get -y purge scala-library* scala*
 
@@ -56,10 +56,6 @@ sudo apt-get install -y docker-ce
 sudo groupadd docker
 sudo usermod -aG docker "${USER}"
 
-# Docker Compose
-sudo curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-
 # Cleanup
 sudo apt-get -y autoremove
 
@@ -71,4 +67,4 @@ cd ~
 git clone https://github.com/arjones/bigdata-workshop-es.git
 
 cd bigdata-workshop-es
-docker-compose pull
+docker compose pull
